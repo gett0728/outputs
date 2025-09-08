@@ -1,0 +1,94 @@
+$light-bg: white;
+$light-text: black;
+$dark-bg: black;
+$dark-text: white;
+
+$toggle-button-bg: #ddd;
+
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+
+  &.light {
+    background: $light-bg;
+    color: $light-text;
+  }
+
+  &.dark {
+    background: $dark-bg;
+    color: $dark-text;
+  }
+}
+
+.theme-toggle {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  background: $toggle-button-bg;
+  border-radius: 6px;
+}
+
+.digital-clock {
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 5px 0 20px;
+  }
+}
+
+.analog-clock {
+  .dial {
+    width: 160px;
+    height: 160px;
+  border: 4px solid #333;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+
+    &.hour {
+      width: 6px;
+      height: 50px;
+    }
+
+    &.minute {
+      width: 4px;
+      height: 70px;
+    }
+
+    &.second {
+      width: 2px;
+      height: 75px;
+    }
+  }
+
+  .center-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
